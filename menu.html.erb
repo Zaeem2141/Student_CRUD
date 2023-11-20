@@ -1,0 +1,12 @@
+<h1>Menu</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  
+<% end %>
+
+
+<%= button_to "Add student", add_path, method: :get %>
+<%= button_to "Delete student", info_path, method: :get %>
+<%= button_to "Display ALL", display_path, method: :get %>
+<%= button_to "Update a student", infoU_path, method: :get %>

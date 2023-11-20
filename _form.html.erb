@@ -1,0 +1,14 @@
+<%= form_with model: [ @student, @student.subjects.build] do |form| %>
+  <p>
+    <%= form.label :'Subject Name' %><br>
+    <%= form.text_field :subjectname %>
+  </p>
+  <p>
+    <%= form.label :'Subject Instructore' %><br>
+    <%= form.text_area :subjectInstructor%>
+  </p>
+  <p>
+    <%= form.submit  'Add subject' %>
+    
+  </p>
+<% end %>

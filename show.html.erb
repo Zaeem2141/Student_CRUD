@@ -1,0 +1,30 @@
+<!-- app/views/students/show.html.erb -->
+
+<h1>Student Details</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  
+<% end %>
+
+     <%= render partial: "student/showpartial", locals: { student: @student } %>
+      <br>
+
+      <div>
+     <br>
+ 
+     <div>
+ <!>
+  <strong>NAme</strong>
+  <%= @subject.subjectname %>
+</div>
+
+
+<div>
+  <strong>Subject Instructor:</strong>
+  <%= @subject.subjectInstructor %>
+</div>
+
+<br><br>
+
+<%= button_to "back to menu" , menu_path , method: :get %>

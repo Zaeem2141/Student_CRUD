@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students List</title>
+</head>
+<body>
+  <h1>Students</h1>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>CGPA</th>
+        <th>Section</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.roll %></td>
+          <td><%= student.cgpa %></td>
+          <td><%= student.section %></td>
+          <td><%= button_to "Update", edit_path(student.id), method: :get %></td>
+           <td><%= button_to "Delete", destroyi_path(student.id), method: :get %></td>
+           <td><%= button_to "Add courses", subject_new_path(student.id), method: :get %></td>
+        </tr>
+        <%student.subjects.each do |subt| %>
+        <tr>
+            <td><%= subt.subjectname %></td>
+          <td><%= subt.subjectInstructor %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+   <h2>Totals students are <%=@students.length%></h2>
+
+</body>
+</html>

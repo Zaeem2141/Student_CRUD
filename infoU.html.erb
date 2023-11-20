@@ -1,0 +1,13 @@
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+
+<%= form_with url:index_path , local: true do |form| %>
+
+<%= form.label :"Enter the name to update" %>
+  <%= form.text_field :up_field, name: 'up_field' %>
+
+  <%= form.submit  "update"%>
+<% end %>

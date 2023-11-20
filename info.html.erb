@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+
+<%= form_with url: destroy_path, local: true do |form| %>
+
+<%= form.label :"Enter the name to delete" %>
+  <%= form.text_field :custom_field, name: 'custom_field' %>
+
+  <%= form.submit  "delete"%>
+<% end %>
